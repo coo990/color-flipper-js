@@ -118,7 +118,20 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/index.js":[function(require,module,exports) {
-var colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
+var colors = ["green", "red", "rgba(133,122,200)", "#f15025"]; // Target the button class
+
+var btn = document.getElementById('btn'); // Target color span class
+
+var color = document.querySelector('.color'); // Set up logic when button clicked
+
+btn.addEventListener('click', function () {
+  // get random number between 0 - 3 from colors array
+  var randomNumber = 2; // targets background color and changes when function clicked
+
+  document.body.style.backgroundColor = colors[randomNumber]; // changes span text
+
+  color.textContent = colors[randomNumber];
+});
 },{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
