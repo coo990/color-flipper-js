@@ -125,13 +125,19 @@ var btn = document.getElementById('btn'); // Target color span class
 var color = document.querySelector('.color'); // Set up logic when button clicked
 
 btn.addEventListener('click', function () {
-  // get random number between 0 - 3 from colors array
-  var randomNumber = 2; // targets background color and changes when function clicked
+  // invoke random number function
+  var randomNumber = getRandomNumber();
+  console.log(randomNumber); // targets background color and changes when function clicked
 
-  document.body.style.backgroundColor = colors[randomNumber]; // changes span text
+  document.body.style.backgroundColor = colors[randomNumber]; // changes span text (similar to innerHTML)
 
   color.textContent = colors[randomNumber];
-});
+}); // get random number between 0 - 3 from colors array
+
+function getRandomNumber() {
+  // rounds the number down the the floor method
+  return Math.floor(Math.random() * colors.length);
+}
 },{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
